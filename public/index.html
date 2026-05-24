@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi Notes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <header class="app-header">
+                <div class="logo-icon">🔮</div>
+                <div>
+                    <h1>Mimi Notes</h1>
+                    <p class="subtitle">Simpan ide dan ruang pikiranmu di sini.</p>
+                </div>
+            </header>
+
+            <div class="note-workspace">
+                <div class="workspace-header">
+                    <span class="status-indicator"></span>
+                    <h3 id="form-title">Buat Catatan Baru</h3>
+                </div>
+                
+                <input type="hidden" id="note-id">
+                
+                <div class="input-group">
+                    <label for="note-judul">Judul Ide</label>
+                    <input type="text" id="note-judul" placeholder="Mau nulis tentang apa hari ini?..." required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="note-isi">Isi Catatan</label>
+                    <textarea id="note-isi" rows="6" placeholder="Tuangkan isi pikiranmu secara detail di sini..." required></textarea>
+                </div>
+                
+                <div class="action-row">
+                    <button id="btn-save" class="btn btn-primary" onclick="saveNote()">
+                        <span>✨</span> Simpan Catatan
+                    </button>
+                    <button id="btn-cancel" class="btn btn-secondary" onclick="resetForm()" style="display: none;">
+                        Batal
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Koleksi Catatanmu</h2>
+            </div>
+            
+            <div id="notes-container" class="notes-feed">
+                <div class="empty-state">
+                    <div class="empty-icon">🪁</div>
+                    <p>Belum ada catatan yang tersimpan.</p>
+                    <small>Tulis ide pertamamu di panel sebelah kiri!</small>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
